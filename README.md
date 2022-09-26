@@ -61,13 +61,20 @@ developing your own process.
 ## Your Notes Here
 
 - Add a new toy when the toy form is submitted
+    Initial trial to post data got me a 500internal server error in Rails server log because of typo in the create method.
+   
 
   - How I debugged:
+   which I fixed from Toys to Toy.Singular names for the class names . After that I could see from rails logs that the data can be posted.
 
 - Update the number of likes for a toy
+  Trying to update hit with unexpected end of Json input in the console.
 
   - How I debugged:
+  Since the front-end is already set up the problem must have been in the controller.Using byebug i could see the key value-pairs of the params so i the problem had to be that the update method was not rendering json so I fixed it by ensuring it was rendering json response to the front-end
 
 - Donate a toy to Goodwill (and delete it from our database)
+Trying to delete it resulted in a 404 not found error.In the front-end
 
   - How I debugged:
+  From the Rails logs there was a route error as destroy route was not there.so I did create the destroy route in the route.rb.Now data could be deleted by pressing the delete button.
